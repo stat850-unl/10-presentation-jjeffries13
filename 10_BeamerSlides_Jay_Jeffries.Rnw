@@ -45,7 +45,7 @@ opts_chunk$set(fig.path = 'figure/beamer', fig.align = 'center', fig.show = 'hol
 
 \title[Assignment 10 Slides]{Autobiography of Jay Jeffries}
 
-\author{Jay Jeffries 
+\author{Jay Jeffries
 \thanks{to the haters}}
 \makebeamertitle
 
@@ -81,30 +81,32 @@ opts_chunk$set(fig.path = 'figure/beamer', fig.align = 'center', fig.show = 'hol
 # Some data setup code
 if (!"palmerpenguins" %in% installed.packages()) {
   remotes::install_github("allisonhorst/palmerpenguins")
-} 
+}
 #Installing and loading palmerpenguins data up from GitHub!
 library(palmerpenguins)
 library(ggplot2)
-library(grid)
-library(png)
+#install.packages("grid")
+#install.packages("grid")
+library("grid")
+library("png")
 #Loading the other appropriate libraries for my plots
 
-penguin_line <- ggplot(penguins, aes(x = flipper_length_mm, y = bill_depth_mm, fill = species)) + 
-                geom_point() + 
-                geom_smooth(method = "lm", se = FALSE) + 
+penguin_line <- ggplot(penguins, aes(x = flipper_length_mm, y = bill_depth_mm, fill = species)) +
+                geom_point() +
+                geom_smooth(method = "lm", se = FALSE) +
                 theme_bw() #Creating the original scatterplot
 
 img <- png::readPNG("penguins1.png")
 penguin_pic <- rasterGrob(img, interpolate = TRUE)
-fav_plot <- penguin_line + theme(panel.grid.major = element_blank(), 
-              panel.grid.minor = element_blank(), 
+fav_plot <- penguin_line + theme(panel.grid.major = element_blank(),
+              panel.grid.minor = element_blank(),
               plot.title = element_text(size = rel(1.5), face = "bold"),
               axis.ticks = element_blank()) +
               annotation_custom(penguin_pic) +
               ggtitle("Let's Blow This Popsicle Stand") #Adding the png image to the scatterplot
 @
 
-<<penguin-plots, fig.width = 4, fig.height = 4, out.width = '.45\\linewidth'>>=
+<<penguin-plots, fig.width = 4, fig.height = 4, out.width = '.45\\linewidth', warning=FALSE, message=FALSE, comment=FALSE, echo=FALSE, cache=FALSE>>=
 fav_plot
 @
 \end{frame}
@@ -112,9 +114,9 @@ fav_plot
 \section{CV}
 \begin{frame}[fragile]{Curriculum Vitae}
 
-~insert link to CV~
+\url{https://github.com/stat850-unl/10-presentation-jjeffries13/blob/master/Curruculum%20Vitae.pdf
+    }
 
 \end{frame}
-
 
 \end{document}
