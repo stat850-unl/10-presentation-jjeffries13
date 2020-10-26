@@ -40,6 +40,9 @@ Upload the link to the compiled index.html file to Canvas to complete this assig
 
 
 If you have done all of the steps correctly, you should be able to find your index.html file by going to this url: 
-https://stat850-unl.github.io/10-presentation-<your-gh-username-here>/
+https://stat850-unl.github.io/10-presentation-\<your-gh-username-here\>/
     
 (Note that you'll have to replace the part in brackets appropriately.)
+
+[testing](10_XaringanSlides_Jay_Jeffries.html)
+
